@@ -1,6 +1,6 @@
 {
   "name": "edge-animate-hack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A hacked version of the Adobe Edge Animate runtime, to allow animations to be more easily used and controlled when using a require style dev workflow.",
   "main": "edge.5.0.1-hack.js",
   "scripts": {
