@@ -3100,14 +3100,17 @@ var AdobeEdge = AdobeEdge || {};
             resources = compDefn.resources,
             defnOpts  = compDefn.opts;
 
-        // Create and add the composition to the compositions Array
+        // Ideally we could just return the original comp
+        // but I have not figured out how to reset the comp
+        // so that it will play again.
         if(AdobeEdge.compositions[compId]) {
-            return AdobeEdge.compositions[compId];
-        } else {
-            var comp = comps[compId] = AdobeEdge.compositions[compId] = new Composition(compId, opts);
-            notifyObservers(AdobeEdge, 'newComp', {comp: comp});
-            AdobeEdge.registerCompositionDefn(compId, symbols, fonts, scripts, resources, defnOpts);
+            delete AdobeEdge.compositions[compId];
         }
+
+        // Create and add the composition to the compositions Array
+        var comp = comps[compId] = AdobeEdge.compositions[compId] = new Composition(compId, opts);
+        notifyObservers(AdobeEdge, 'newComp', {comp: comp});
+        AdobeEdge.registerCompositionDefn(compId, symbols, fonts, scripts, resources, defnOpts);
 
         return comp;
     }
