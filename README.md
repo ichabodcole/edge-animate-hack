@@ -7,6 +7,8 @@ The second is the addition of a method called "addComposition" to the AdobeEdge 
 
 As this is a hack for my own personal abuse, it currently does not support all Adobe Edge features, namely preloaders and browsers that do not support css transforms, and possibly other things I have overlooked in my hackery. Feel free to send pull request ;).
 
+A basics example project using angular can be found here <https://github.com/ichabodcole/edge-animate-hack-example/>
+
 ### One form of installation:
     npm install ichabodcole/edge-animate-hack
 
